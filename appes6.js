@@ -23,6 +23,22 @@ class Ui {
     list.appendChild(row); 
   }
 
+  // Local Storage Class
+  class Store {
+
+    static getBook(){
+
+    }
+
+    static displayBooks(){
+
+    }
+
+    static addBook(){
+
+    }
+  }
+
   showAlert(message, className){
     // Create div
     const div = document.createElement('div');
