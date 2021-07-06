@@ -71,6 +71,7 @@ function(e){
 
   //instanciate UI 
   const ui =  new Ui();
+  console.log(ui);
 
   // Validation
   if(title === '' || author === '' || isbn === '') {
@@ -102,4 +103,4 @@ document.getElementById('book-list').addEventListener('click', function(e){
   ui.showAlert('Book removed', 'success');
   e.preventDefault();
 
-})
+});
