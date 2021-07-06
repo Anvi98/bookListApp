@@ -23,22 +23,7 @@ class Ui {
     list.appendChild(row); 
   }
 
-  // Local Storage Class
-  class Store {
-
-    static getBook(){
-
-    }
-
-    static displayBooks(){
-
-    }
-
-    static addBook(){
-
-    }
-  }
-
+ 
   showAlert(message, className){
     // Create div
     const div = document.createElement('div');
@@ -72,6 +57,42 @@ class Ui {
     }
   }
 }
+ // Local Storage Class
+ class Store {
+
+  static getBooks(){
+    let books;
+    if(localStorage.getItem('books') === null){
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
+
+  static displayBooks(){
+    const books = Store.getBooks();
+
+    books.forEach(function(book) {
+      const ui = new Ui;
+
+      // Add Book to Ui
+    });
+  }
+
+  static addBook(book){
+    
+    const books = Store.getBooks();
+
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(){
+
+  }
+}
 
 
 // Event Listeners for Addbook
@@ -98,6 +119,9 @@ function(e){
   } else {
     // Add book to list
     ui.addBookToList(book);
+
+    // Add to LS
+    Store.addBook(book);
 
     // Show success
     ui.showAlert('Book Added ! ', 'success');
