@@ -12,7 +12,6 @@ We can:
 
 http://anvialex.me/bookListApp/
 
-![screenshot](screen.png)
 
 ## Setup 
 You can clone this repo by doing:
